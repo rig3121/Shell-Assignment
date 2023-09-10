@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Trevor Bakker 
+// Copyright (c) 2023 Trevor Bakker 
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -36,9 +36,9 @@
                                 // In this case  white space
                                 // will separate the tokens on our command line
 
-#define MAX_COMMAND_SIZE 255    // The maximum command-line size
+#define MAX_COMMAND_SIZE 128    // The maximum command-line size
 
-#define MAX_NUM_ARGUMENTS 5     // Mav shell only supports four arguments
+#define MAX_NUM_ARGUMENTS 1     // Mav shell currently only supports one argument
 
 int main()
 {
@@ -99,7 +99,6 @@ int main()
       printf("token[%d] = %s\n", token_index, token[token_index] );  
     }
 
-
     // Cleanup allocated memory
     for( int i = 0; i < MAX_NUM_ARGUMENTS; i++ )
     {
@@ -116,5 +115,5 @@ int main()
   free( command_string );
 
   return 0;
-  // e2520ca2-76f3-90d6-0242ac120003
+  // e1234ca2-76f3-90d6-0703ac120003
 }
