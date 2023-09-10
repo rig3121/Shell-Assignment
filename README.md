@@ -62,7 +62,7 @@ output shall be the output of the commands entered or the shell prompt.
 This assignment must be coded in C. Any other language will result in 0 points. You 
 programs will be compiled and graded on the course GitHub Codespace. Code that does not compile 
 with :
-        gcc msh.c -o msh 
+        make 
 will result in a 0.
 
 Your program, msh.c is to be turned in via the Feedback GitHub pull request. **Do not merge this pull request**.  Submission time is determined by 
