@@ -69,7 +69,7 @@ Your program, msh.c is to be turned in via the Feedback GitHub pull request. **D
 the GitHub system time. You may push your code as often as you wish. Only your 
 last submission will be graded. 
 
-There are coding resources and working code you may use on the course GitHub page and in the assignment repository at: [https://github.com/CSE3320-Fall-2023/Shell-Assignment](https://github.com/CSE3320-Fall-2023/Shell-Assignment). You are free to use any of that code in your program if needed. You may use no other outside code.
+There are coding resources and working code you may use on the course GitHub page and in the assignment repository at: [[https://github.com/CSE3320-Fall-2023/Shell-Assignment](https://github.com/CSE3320-Fall-2023/Shell-Assignment). https://github.com/CSE3320-Fall-2023/Shell-Assignment You are free to use any of that code in your program if needed. You may use no other outside code.
 
 ## Academic Integrity
 This assignment must be 100% your own work. No code may be copied from friends, 
