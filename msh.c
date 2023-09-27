@@ -96,8 +96,44 @@ int main()
     int token_index  = 0;
     for( token_index = 0; token_index < token_count; token_index ++ ) 
     {
-      printf("token[%d] = %s\n", token_index, token[token_index] );  
+     //printf("token[%d] = %s\n", token_index, token[token_index] );  
+      if( strcmp(token[0],"cd")==0)
+      {
+      chdir(token[1]);
+      }
+      else if( strcmp (token[0]," ")==0)
+      {
+       token[0]=NULL;
+      }
+      else if( strcmp(token[0],"quit")==0)
+      {
+       exit(0);
+      }
+      else if( strcmp(token[0],"exit")==0)
+      {
+        exit(0);
+      }
+      else
+     {
+        pid_t pid = fork();
+        if( pid == 0 )
+        {
+
+        // Notice you can add as many NULLs on the end as you want
+         int ret = execvp( token[0], &token[1] );  
+         if( ret == -1 )
+          {
+            perror("command not found: ");
+          }
+         else 
+          {
+           int status;
+           wait( & status );
+          }
+         }    
+      }
     }
+  
 
     // Cleanup allocated memory
     for( int i = 0; i < MAX_NUM_ARGUMENTS; i++ )
