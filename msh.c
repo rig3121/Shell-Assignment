@@ -38,7 +38,7 @@
 
 #define MAX_COMMAND_SIZE 128    // The maximum command-line size
 
-#define MAX_NUM_ARGUMENTS 1     // Mav shell currently only supports one argument
+#define MAX_NUM_ARGUMENTS 12     // Mav shell currently only supports one argument
 
 int main()
 {
@@ -90,20 +90,15 @@ int main()
         token_count++;
     }
 
-    // Now print the tokenized input as a debug check
-    // \TODO Remove this for loop and replace with your shell functionality
 
-    int token_index  = 0;
-    for( token_index = 0; token_index < token_count; token_index ++ ) 
-    {
-     //printf("token[%d] = %s\n", token_index, token[token_index] );  
-      if( strcmp(token[0],"cd")==0)
+    
+      if(token[0] == NULL)
+      {
+       continue;
+      }
+      if ( strcmp(token[0],"cd")==0)
       {
       chdir(token[1]);
-      }
-      else if( strcmp (token[0]," ")==0)
-      {
-       token[0]=NULL;
       }
       else if( strcmp(token[0],"quit")==0)
       {
@@ -111,28 +106,27 @@ int main()
       }
       else if( strcmp(token[0],"exit")==0)
       {
-        exit(0);
+       exit(0);
       }
-      else
-     {
+       else
+      {
         pid_t pid = fork();
         if( pid == 0 )
         {
-
         // Notice you can add as many NULLs on the end as you want
-         int ret = execvp( token[0], &token[1] );  
+         int ret = execvp( token[0], &token[0] );  
          if( ret == -1 )
           {
             perror("command not found: ");
           }
+        }
          else 
           {
            int status;
            wait( & status );
           }
-         }    
+           
       }
-    }
   
 
     // Cleanup allocated memory
